@@ -64,7 +64,8 @@ export const NoteBanner: FC<{
       className={clsxm(
         'mt-4 flex justify-center p-4 text-base leading-8',
         'lg:-ml-12 lg:w-[calc(100%+6rem)]',
-        '-ml-4 w-[calc(100%+2rem)]',
+        // '-ml-4 w-[calc(100%+2rem)]',
+        'mx-[var(--padding-h)]',
 
         bannerClassNames[banner.type as keyof typeof bannerClassNames],
         banner.className,
