@@ -1,10 +1,11 @@
 'use client'
 
 import { useQuery, useQueryClient } from '@tanstack/react-query'
-import React, { createElement } from 'react'
+import { createElement } from 'react'
 import clsx from 'clsx'
 import { m } from 'framer-motion'
 import Image from 'next/image'
+import type React from 'react'
 
 import { ErrorBoundary } from '~/components/common/ErrorBoundary'
 import {
@@ -64,7 +65,7 @@ const TwoColumnLayout = ({
   return (
     <div
       className={clsxm(
-        'relative block size-full min-w-0 max-w-[1800px] flex-col flex-wrap items-center lg:flex lg:flex-row',
+        'relative mx-auto block size-full min-w-0 max-w-[1800px] flex-col flex-wrap items-center lg:flex lg:flex-row',
         className,
       )}
     >
@@ -102,7 +103,7 @@ const Hero = () => {
       return acc + (cur.text?.length || 0)
     }, 0) * 50
   return (
-    <div className="mt-20 h-dvh min-h-[800px] min-w-0 max-w-screen overflow-hidden lg:mt-[-4.5rem]">
+    <div className="mt-20 min-w-0 max-w-screen overflow-hidden lg:mt-[-4.5rem] lg:h-dvh lg:min-h-[800px]">
       <TwoColumnLayout leftContainerClassName="mt-[120px] lg:mt-0 h-[15rem] lg:h-1/2">
         <>
           <m.div
@@ -180,12 +181,12 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={softBouncePreset}
           className={clsx(
-            'absolute inset-x-0 bottom-0 flex flex-col center',
+            'inset-x-0 bottom-0 mt-12 flex flex-col center lg:absolute lg:mt-0',
 
             'text-neutral-800/80 center dark:text-neutral-200/80',
           )}
         >
-          <small>
+          <small className="text-center">
             当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。
           </small>
           <span className="mt-8 animate-bounce">
